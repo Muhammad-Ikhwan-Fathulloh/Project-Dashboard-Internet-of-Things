@@ -11,3 +11,11 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
     <li>ESPAsyncWebServer</li>
     <li>WifiManager</li>
 </ul>
+
+### System View Ver 1
+<img src="havo_ver1.png">
+
+<br>
+
+### System View On The Air (Update Dynamic Code with Wifi)
+<img src="ota.png">
