@@ -12,10 +12,19 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
     <li>WifiManager</li>
 </ul>
 
-### System View Ver 1
-<img src="havo_ver1.png">
+### Wifi Manager
+<img src="Connect.png">
 
-<br>
+<img src="Wifi.png">
+
+<img src="Success.png">
 
 ### System View On The Air (Update Dynamic Code with Wifi)
 <img src="ota.png">
+
+### System View Ver 1
+<img src="havo_ver1.png">
+
+### Page Not Found
+<img src="404.png">
+

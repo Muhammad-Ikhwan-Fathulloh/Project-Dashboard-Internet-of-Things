@@ -25,6 +25,7 @@
 
 //Page HTML
 #include "Dashboard.h"
+#include "NotFound.h"
 
 //SSID and Password
 const char* ssid = "ESP32";
@@ -41,12 +42,13 @@ const char* password = "1sampai100";
 AsyncWebServer server(80); // server port 80
 WebSocketsServer websockets(81);
 
+//Page not found
 void notFound(AsyncWebServerRequest *request)
 {
-  request->send(404, "text/plain", "Page Not found");
+  request->send(404, "text/html", notfoundpage);
 }
 
-
+//Websocket Event Kontak
 void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length) {
 
   switch (type) 
