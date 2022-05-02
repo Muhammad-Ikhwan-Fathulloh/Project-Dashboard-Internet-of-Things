@@ -216,9 +216,9 @@ char webpage[] PROGMEM = R"=====(
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Website</a></li>
-            <li><a href="#" class="text-white">Youtube</a></li>
-            <li><a href="#" class="text-white">Instagram</a></li>
+            <li><a href="https://www.havo.co.id/" class="text-white">Website</a></li>
+            <li><a href="https://www.youtube.com/teknologipintar" class="text-white">Youtube</a></li>
+            <li><a href="https://www.instagram.com/pintarteknik/" class="text-white">Instagram</a></li>
           </ul>
         </div>
       </div>
@@ -248,7 +248,7 @@ char webpage[] PROGMEM = R"=====(
         <h1 class="fw-light"><strong>Havo Technology</strong></h1>
         <p class="lead text-muted"><i class="fa fa-rss f-left"></i> Controlling and Monitoring System</p>
         <p>
-          <a href="#" class="btn bg-c-yellow my-2 text-white"><strong>Wifi</strong></a>
+          <a href="https://www.havo.co.id/" class="btn bg-c-yellow my-2 text-white"><strong>Website</strong></a>
           <a href="/update" class="btn bg-c-blue my-2 text-white"><strong>OTA</strong></a>
         </p>
         <div class="timex">

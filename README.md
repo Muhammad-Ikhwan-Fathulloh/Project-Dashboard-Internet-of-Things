@@ -9,4 +9,5 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
     <li>ArduinoJSON</li>
     <li>AsyncElegantOTA</li>
     <li>ESPAsyncWebServer</li>
+    <li>WifiManager</li>
 </ul>

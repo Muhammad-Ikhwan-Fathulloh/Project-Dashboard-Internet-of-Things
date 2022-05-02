@@ -13,6 +13,9 @@
 #error "Board not found"
 #endif
 
+//Library WifiManager
+#include<WiFiManager.h>  
+
 //Library Websocket and ArduinoJson
 #include <WebSocketsServer.h>
 #include <ArduinoJson.h>
@@ -97,17 +100,13 @@ void setup(void)
   pinMode(Kontak2,OUTPUT);
   pinMode(Kontak3,OUTPUT);
   pinMode(Kontak4,OUTPUT);
-  
-    WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid, password);
-    if (WiFi.waitForConnectResult() != WL_CONNECTED) {
-        Serial.printf("WiFi Failed!\n");
-        return;
-    }
 
-    Serial.print("IP Address: ");
-    Serial.println(WiFi.localIP());
- 
+  //WifiManager  
+  WiFiManager wifiManager;  
+
+  //Access Point  
+  wifiManager.autoConnect("ConnectHavo","password");  
+  Serial.println("Connected.....");  
     
   if (MDNS.begin("havo")) { //havo.local/
     Serial.println("MDNS responder started");
