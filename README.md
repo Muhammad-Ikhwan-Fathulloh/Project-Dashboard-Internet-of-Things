@@ -26,6 +26,7 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
 ### System View Ver 1
 <img src="Assets/img/havo_ver1.png">
 
+### System View Ver 2
 <img src="Assets/img/havo_ver2.png">
 
 ### Page Not Found
