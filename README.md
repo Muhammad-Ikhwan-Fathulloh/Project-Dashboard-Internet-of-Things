@@ -10,7 +10,7 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
     <li>AsyncElegantOTA</li>
     <li>ESPAsyncWebServer</li>
     <li>WifiManager</li>
-    <li>Tricker</li>
+    <li>Ticker</li>
 </ul>
 
 ### Wifi Manager
