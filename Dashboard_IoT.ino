@@ -18,6 +18,7 @@
 
 //Library Websocket and ArduinoJson
 #include <WebSocketsServer.h>
+#include <Ticker.h>
 #include <ArduinoJson.h>
 
 //Library On The Air
@@ -41,6 +42,10 @@ const char* password = "1sampai100";
 
 AsyncWebServer server(80); // server port 80
 WebSocketsServer websockets(81);
+
+void send_sensor();
+
+Ticker timer;
 
 //Page not found
 void notFound(AsyncWebServerRequest *request)
@@ -126,10 +131,34 @@ void setup(void)
   server.begin();  // it will start webserver
   websockets.begin();
   websockets.onEvent(webSocketEvent);
+  timer.attach(2,send_sensor);
 }
 
 void loop(void)
 {
  // Websocket
  websockets.loop();
+}
+
+//Sensor Realtime
+void send_sensor()
+{
+   // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+  String title = "Hello word";
+  int counter = 0;
+  
+  for(int i = 0; i <= 100; i++){
+    counter = i;
+    // JSON_Data = {"title":title,"counter":counter}
+    String JSON_Data = "{\"title\":";
+           JSON_Data += "\"";
+           JSON_Data += title;
+           JSON_Data += "\"";
+           JSON_Data += ",\"counter\":";
+           JSON_Data += counter;
+           JSON_Data += "}";
+    Serial.println(JSON_Data);     
+    websockets.broadcastTXT(JSON_Data);
+    delay(1000);
+  }
 }

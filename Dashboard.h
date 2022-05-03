@@ -129,6 +129,20 @@ char webpage[] PROGMEM = R"=====(
         var button_2_status = 0
         var button_3_status = 0
         var button_4_status = 0
+        var title = 0;
+        var counter = 0;
+
+        connection.onmessage = function(event){
+          var full_data = event.data
+          console.log(full_data)
+          var data = JSON.parse(full_data)
+
+          title = data.title
+          counter = data.counter
+          
+          document.getElementById("title_value").innerHTML = title
+          document.getElementById("counter_value").innerHTML = counter
+        }
     
         function button_1_on()
         {
@@ -317,6 +331,13 @@ char webpage[] PROGMEM = R"=====(
             <div class="card border-dark" style="height: 20rem">
                 <div class="card-body">
                   <h5 class="card-title"><i class="fa fa-clipboard f-left"></i> Monitoring</h5>
+                  <div class="row text-center">
+                    <div class="col m-3">
+                        <h3 id="title_value">Tes</h3>
+                        <br>
+                        <h3 id="counter_value">0</h3>
+                    </div>
+                  </div>
                 </div>
               </div>
         </div>
