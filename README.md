@@ -10,6 +10,7 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
     <li>AsyncElegantOTA</li>
     <li>ESPAsyncWebServer</li>
     <li>WifiManager</li>
+    <li>Tricker</li>
 </ul>
 
 ### Wifi Manager
@@ -24,6 +25,8 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
 
 ### System View Ver 1
 <img src="Assets/img/havo_ver1.png">
+
+<img src="Assets/img/havo_ver2.png">
 
 ### Page Not Found
 <img src="Assets/img/404.png">
