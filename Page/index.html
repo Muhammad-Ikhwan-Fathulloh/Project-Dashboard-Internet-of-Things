@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Havo Tech</title>
+    <title>Smart Aquarium System</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
@@ -18,6 +18,9 @@
 
     <!-- Favicons -->
     <meta name="theme-color" content="#7952b3">
+
+    <link rel="icon" href="https://i.ibb.co/n7HKTsK/Smart-Aquarium.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://i.ibb.co/n7HKTsK/Smart-Aquarium.png" sizes="16x16" type="image/png">
 
 
     <style>
@@ -129,6 +132,7 @@
         var button_2_status = 0
         var button_3_status = 0
         var button_4_status = 0
+        var button_light_status = 0
         var title = 0;
         var counter = 0;
 
@@ -142,6 +146,63 @@
           
           document.getElementById("title_value").innerHTML = title
           document.getElementById("counter_value").innerHTML = counter
+        }
+
+        
+
+        function webcam_on()
+        {
+          document.getElementById("webcamon").setAttribute("class", "text-white btn bg-c-green")
+          document.getElementById("webcamoff").setAttribute("class", "text-danger btn btn-outline-danger")
+          
+
+          if (localStorage.getItem("input_webcam") == null) {
+            document.getElementById("webcam").innerHTML = `<div class="col-sm-4 mt-3">
+              <div class="card border-dark" style="height: 20rem">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="fa fa-camera f-left"></i> Webcam</h5>
+                  <strong>Input Webcam Link !!!</strong>
+                </div>
+              </div>
+            </div>` 
+          }else{
+            local_webcam = localStorage.getItem("input_webcam")
+            document.getElementById("webcam").innerHTML = `<div class="col-sm-4 mt-3">
+              <div class="card border-dark" style="height: 20rem">
+                <div class="card-body">
+                  <h5 class="card-title"><i class="fa fa-camera f-left"></i> Webcam</h5>
+                  <iframe style="display:auto;" width="400" height="300"
+                  src="${local_webcam}" allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>` 
+          }
+          
+        }
+
+        function webcam_off()
+        {
+          document.getElementById("webcamon").setAttribute("class", "text-success btn btn-outline-success")
+          document.getElementById("webcamoff").setAttribute("class", "text-white btn bg-c-pink")
+          document.getElementById("webcam").innerHTML = `` 
+        }
+
+        function webcam_light_on()
+        {
+            document.getElementById("webcam_lighton").setAttribute("class", "text-white btn bg-c-green")
+            document.getElementById("webcam_lightoff").setAttribute("class", "text-danger btn btn-outline-danger")
+            button_light_status = 1 
+            console.log("Webcam light is ON")
+            send_data()
+        }
+        function webcam_light_off()
+        {
+            document.getElementById("webcam_lighton").setAttribute("class", "text-success btn btn-outline-success")
+            document.getElementById("webcam_lightoff").setAttribute("class", "text-white btn bg-c-pink")
+            button_light_status = 0
+            console.log("Webcam light is OFF")
+            send_data()
         }
     
         function button_1_on()
@@ -214,7 +275,7 @@
 
         function send_data()
         {
-          var full_data = '{"Kontak1" :'+button_1_status+',"Kontak2":'+button_2_status+',"Kontak3":'+button_3_status+',"Kontak4":'+button_4_status+'}'
+          var full_data = '{"Kontak1" :'+button_1_status+',"Kontak2":'+button_2_status+',"Kontak3":'+button_3_status+',"Kontak4":'+button_4_status+',"webcam_light":'+button_light_status+'}'
           connection.send(full_data)
         }
 
@@ -225,15 +286,15 @@
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <h4 class="text-white">About</h4>
-          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+          <p class="text-muted">Smart Aquarium System is an aquarium monitoring system using a live streaming camera, and can control systems such as automatic feeding, lighting, pumps, and water purifiers with a website-based Internet of Things.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
+          <!-- <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
             <li><a href="https://www.havo.co.id/" class="text-white">Website</a></li>
             <li><a href="https://www.youtube.com/teknologipintar" class="text-white">Youtube</a></li>
             <li><a href="https://www.instagram.com/pintarteknik/" class="text-white">Instagram</a></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
@@ -241,7 +302,7 @@
   <div class="navbar navbar-dark l-bg-blue-dark shadow-sm">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
-        <strong>Havo Tech</strong>
+        <img src="https://i.ibb.co/h9WTgjV/Smart-Aquarium-Putih.png" alt="" width="50"><strong>Smart Aquarium System</strong>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -254,15 +315,14 @@
 
   <section class="container">
     <div class="row">
-        <div class="col mt-5" align="center">
-            <img src="https://i.ibb.co/1vn6T9r/software-engineer-1731282.png" width="400" alt="">
-            <!-- <img src="https://i.ibb.co/9GLXJhX/success-1768777.png" width="300" alt=""> -->
+        <div class="col-sm-6 mt-5" align="center">
+            <img src="https://i.ibb.co/ns5xc32/aquarium.png" class="img-fluid" alt="">
         </div>
       <div class="col mt-5">
-        <h1 class="fw-light"><strong>Havo Technology</strong></h1>
+        <h1 class="fw-light"><img src="https://i.ibb.co/n7HKTsK/Smart-Aquarium.png" class="img-fluid" width="70" alt=""><strong>Smart Aquarium System</strong></h1>
         <p class="lead text-muted"><i class="fa fa-rss f-left"></i> Controlling and Monitoring System</p>
         <p>
-          <a href="https://www.havo.co.id/" class="btn bg-c-yellow my-2 text-white"><strong>Website</strong></a>
+          <a href="https://www.havo.co.id/" class="btn bg-c-yellow my-2 text-white"><strong>Developer</strong></a>
           <a href="/update" class="btn bg-c-blue my-2 text-white"><strong>OTA</strong></a>
         </p>
         <div class="timex">
@@ -278,28 +338,62 @@
 
 
   <div class="container">
-    <div class="row">
-        <div class="col-sm-4 mt-3">
-          <div class="card border-dark" style="height: 20rem">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fa fa-camera f-left"></i> Webcam</h5>
+    <div class="row justify-content-center" align="center">
+      <div class="col mt-3">
+          <div class="card border-dark">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fa fa-cog f-left"></i> Configuration Webcam</h5>
+                <div class="row justify-content-center" align="center">
+                  <div class="col-sm-4">
+                    <label for="exampleFormControlInput1" class="form-label"><strong>Webcam Link</strong></label>
+                    <div class="input-group">
+                      <input type="input_webcam" class="form-control" id="input_webcam" placeholder="Input Webcam Link">
+                    <button class="btn btn-primary" type="button" id="button_webcam"><strong>Save</strong></button>
+                    </div>
+                    
+                  </div>
+                </div>
+                  <div class="row">
+                    <div class="col m-3">
+                        <strong> Webcam Status </strong>
+                        <br>
+                        <div class="btn-group text-white" role="group" aria-label="Basic example">
+                            <button id="webcamon" type="button" class="btn btn-outline-success" onclick="webcam_on()" style="width: 5rem"><strong><i class="fa fa-bolt f-left"></i></strong></button> 
+                            <button id="webcamoff" type="button" class="btn btn-outline-danger" onclick="webcam_off()" style="width: 5rem"><strong><i class="fa fa-power-off f-left"></i></strong></button>
+                        </div>    
+                    </div>
+                  
+                    <div class="col m-3">
+                      <strong> Webcam Lighting </strong>
+                      <br>
+                      <div class="btn-group text-white" role="group" aria-label="Basic example">
+                          <button id="webcam_lighton" type="button" class="btn btn-outline-success" onclick="webcam_light_on()" style="width: 5rem"><strong><i class="fa fa-bolt f-left"></i></strong></button> 
+                          <button id="webcam_lightoff" type="button" class="btn btn-outline-danger" onclick="webcam_light_off()" style="width: 5rem"><strong><i class="fa fa-power-off f-left"></i></strong></button>
+                      </div>    
+                  </div>
+                  </div>
+                 
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-sm-8 mt-3">
-          <div class="card border-dark" style="height: 20rem">
+      </div>
+    </div>
+    <div class="row justify-content-center" align="center">
+        <div id="webcam"></div>
+
+        <div class="col mt-3">
+          <div class="card border-dark">
             <div class="card-body">
                 <h5 class="card-title"><i class="fa fa-plug f-left"></i> Controlling</h5>
                 <div class="row">
                     <div class="col m-3">
-                        <h3> Kontak 1 </h3>
+                        <strong> Feeder </strong><br>
                         <div class="btn-group text-white" role="group" aria-label="Basic example">
                             <button id="button_1on" type="button" class="btn btn-outline-success" onclick="button_1_on()" style="width: 5rem"><strong><i class="fa fa-bolt f-left"></i></strong></button> 
                             <button id="button_1off" type="button" class="btn btn-outline-danger" onclick="button_1_off()" style="width: 5rem"><strong><i class="fa fa-power-off f-left"></i></strong></button>
                         </div>    
                     </div>
                     <div class="col m-3">
-                        <h3> Kontak 2 </h3>
+                        <strong> Lamp </strong><br>
                         <div class="btn-group text-white" role="group" aria-label="Basic example">
                             <button id="button_2on" type="button" class="btn btn-outline-success" onclick="button_2_on()" style="width: 5rem"><strong><i class="fa fa-bolt f-left"></i></strong></button> 
                             <button id="button_2off" type="button" class="btn btn-outline-danger" onclick="button_2_off()" style="width: 5rem"><strong><i class="fa fa-power-off f-left"></i></strong></button>
@@ -308,14 +402,14 @@
                 </div>
                 <div class="row">
                     <div class="col m-3">
-                        <h3> Kontak 3 </h3>
+                        <strong> Pump </strong><br>
                         <div class="btn-group text-white" role="group" aria-label="Basic example">
                             <button id="button_3on" type="button" class="btn btn-outline-success" onclick="button_3_on()" style="width: 5rem"><strong><i class="fa fa-bolt f-left"></i></strong></button> 
                             <button id="button_3off" type="button" class="btn btn-outline-danger" onclick="button_3_off()" style="width: 5rem"><strong><i class="fa fa-power-off f-left"></i></strong></button>
                         </div>
                     </div>
                     <div class="col m-3">
-                        <h3> Kontak 4 </h3>
+                        <strong> Purifiers </strong><br>
                         <div class="btn-group text-white" role="group" aria-label="Basic example">
                             <button id="button_4on" type="button" class="btn btn-outline-success" onclick="button_4_on()" style="width: 5rem"><strong><i class="fa fa-bolt f-left"></i></strong></button> 
                             <button id="button_4off" type="button" class="btn btn-outline-danger" onclick="button_4_off()" style="width: 5rem"><strong><i class="fa fa-power-off f-left"></i></strong></button>
@@ -326,7 +420,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col mt-3">
             <div class="card border-dark" style="height: 20rem">
                 <div class="card-body">
@@ -341,7 +435,7 @@
                 </div>
               </div>
         </div>
-      </div>
+      </div> -->
   </div>
 
 </main>
@@ -351,13 +445,34 @@
     <p class="float-end mb-1">
       <a href="#" class="text-white"><strong>Back to top</strong></a>
     </p>
-    <p class="mb-1 text-white">Havo Technology &copy 2022</p>
+    <p id="dates" class="mb-1 text-white"></p>
   </div>
 </footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script>
+  const input_webcam = document.getElementById("input_webcam")
+  const button_webcam = document.getElementById("button_webcam")
+
+  button_webcam.addEventListener("click", function() {
+    
+    if (input_webcam.value == "") {
+      
+      alert("Input Webcam Link")
+    }else{
+      
+  
+      // save localstorage
+      localStorage.setItem("input_webcam", input_webcam.value)	
+
+      alert("Success Save Webcam Link !")
+      // refresh value
+      document.getElementById("input_webcam").value = "";
+    }
+      
+  })
+
     const getCurrentTimeDate = () => {
         let currentTimeDate = new Date()
 
@@ -416,7 +531,7 @@
         document.getElementById("time").innerHTML = currentTime
         document.getElementById("day").innerHTML = currentDay
         document.getElementById("date").innerHTML = fullDate
-       
+        document.getElementById("dates").innerHTML = `Smart Aquarium System &copy ${CurrentYear}`
 
         
         setTimeout(getCurrentTimeDate, 500)
