@@ -14,7 +14,7 @@
 #endif
 
 //Library WifiManager
-#include<WiFiManager.h>  
+#include <WiFiManager.h>  
 
 //Library Websocket and ArduinoJson
 #include <WebSocketsServer.h>
@@ -37,6 +37,7 @@ const char* password = "1sampai100";
 #define Kontak2 12
 #define Kontak3 14
 #define Kontak4 27
+#define webcam_light 26
 
 #include <ESPAsyncWebServer.h>
 
@@ -91,12 +92,14 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
   int Kontak2_status = doc["Kontak2"];
   int Kontak3_status = doc["Kontak3"];
   int Kontak4_status = doc["Kontak4"];
+  int webcam_light_status = doc["webcam_light"];
 
   //Contact
   digitalWrite(Kontak1,Kontak1_status);
   digitalWrite(Kontak2,Kontak2_status);
   digitalWrite(Kontak3,Kontak3_status);
   digitalWrite(Kontak4,Kontak4_status);
+  digitalWrite(webcam_light,webcam_light_status);
   }
 }
 
@@ -107,15 +110,16 @@ void setup(void)
   pinMode(Kontak2,OUTPUT);
   pinMode(Kontak3,OUTPUT);
   pinMode(Kontak4,OUTPUT);
+  pinMode(webcam_light,OUTPUT);
 
   //WifiManager  
   WiFiManager wifiManager;  
 
   //Access Point  
-  wifiManager.autoConnect("ConnectHavo","password");  
+  wifiManager.autoConnect("Smart Aquarium Master","password");  
   Serial.println("Connected.....");  
     
-  if (MDNS.begin("havo")) { //havo.local/
+  if (MDNS.begin("smartaquarium")) { //smartaquarium.local/
     Serial.println("MDNS responder started");
   }
   
@@ -131,7 +135,7 @@ void setup(void)
   server.begin();  // it will start webserver
   websockets.begin();
   websockets.onEvent(webSocketEvent);
-  timer.attach(2,send_sensor);
+//  timer.attach(2,send_sensor);
 }
 
 void loop(void)
@@ -141,24 +145,24 @@ void loop(void)
 }
 
 //Sensor Realtime
-void send_sensor()
-{
-   // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
-  String title = "Hello word";
-  int counter = 0;
-  
-  for(int i = 0; i <= 100; i++){
-    counter = i;
-    // JSON_Data = {"title":title,"counter":counter}
-    String JSON_Data = "{\"title\":";
-           JSON_Data += "\"";
-           JSON_Data += title;
-           JSON_Data += "\"";
-           JSON_Data += ",\"counter\":";
-           JSON_Data += counter;
-           JSON_Data += "}";
-    Serial.println(JSON_Data);     
-    websockets.broadcastTXT(JSON_Data);
-    delay(1000);
-  }
-}
+//void send_sensor()
+//{
+//   // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+//  String title = "Hello word";
+//  int counter = 0;
+//  
+//  for(int i = 0; i <= 100; i++){
+//    counter = i;
+//    // JSON_Data = {"title":title,"counter":counter}
+//    String JSON_Data = "{\"title\":";
+//           JSON_Data += "\"";
+//           JSON_Data += title;
+//           JSON_Data += "\"";
+//           JSON_Data += ",\"counter\":";
+//           JSON_Data += counter;
+//           JSON_Data += "}";
+//    Serial.println(JSON_Data);     
+//    websockets.broadcastTXT(JSON_Data);
+//    delay(1000);
+//  }
+//}

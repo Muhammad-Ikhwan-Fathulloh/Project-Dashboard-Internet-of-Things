@@ -23,11 +23,12 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
 ### System View On The Air (Update Dynamic Code with Wifi)
 <img src="Assets/img/ota.png">
 
-### System View Ver 1
-<img src="Assets/img/havo_ver1.png">
+### Dashboard Smart Aquarium System
+<img src="Assets/img/smart_aquarium_master.png">
 
-### System View Ver 2
-<img src="Assets/img/havo_ver2.png">
+<img src="Assets/img/smart_aquarium_master_input.png">
+
+<img src="Assets/img/smart_aquarium_master_camera.png">
 
 ### Page Not Found
 <img src="Assets/img/404.png">
