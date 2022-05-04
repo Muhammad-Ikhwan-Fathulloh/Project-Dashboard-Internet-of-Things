@@ -2,6 +2,7 @@
 Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Arduino
 
 ### Libraries System
+<strong>Module Dashboard Smart Aquarium</strong>
 <ul>
     <li>ESP8266/32</li>
     <li>ESPmDNS</li>
@@ -11,6 +12,15 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
     <li>ESPAsyncWebServer</li>
     <li>WifiManager</li>
     <li>Ticker</li>
+</ul>
+
+<strong>Module Camera Smart Aquarium</strong>
+<ul>
+    <li>ESP32Cam</li>
+    <li>ESPmDNS</li>
+    <li>WebSocketServer</li>
+    <li>WifiServer</li>
+    <li>WifiManager</li>
 </ul>
 
 ### Wifi Manager
