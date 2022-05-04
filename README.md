@@ -1,6 +1,8 @@
 # Project-Dashboard-Internet-of-Things
 Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Arduino
 
+<p>Description Project Intership <a href="https://www.havo.co.id/">Havo Smart Technology</a> : Smart Aquarium System is an aquarium monitoring system using a live streaming camera, and can control systems such as automatic feeding, lighting, pumps, and water purifiers with a website-based Internet of Things.</p>
+
 ### Libraries System
 <strong>Module Dashboard Smart Aquarium</strong>
 <ul>
