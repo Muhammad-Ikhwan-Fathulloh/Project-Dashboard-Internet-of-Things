@@ -34,9 +34,9 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
 <img src="Assets/img/espcam.png">
 
 <p>Webcam with Module ESP32Cam, add url project espcam in dashboard master</p>
-<br>
 <a href="https://github.com/Muhammad-Ikhwan-Fathulloh/ESP32Cam">Repository Project ESP32Cam</a>
 
+<strong>Fetch url espcam in smartaquarium</strong>
 <img src="Assets/img/smart_aquarium_master_camera.png">
 
 ### Page Not Found
