@@ -1,4 +1,6 @@
-# Project-Dashboard-Internet-of-Things
+# Project Smart Aquarium System based on Internet of Things
+<h1><img src="https://i.ibb.co/n7HKTsK/Smart-Aquarium.png" width="150" ><strong>Smart Aquarium System</strong></h1>
+
 Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Arduino
 
 <p>Description Project Internship <a href="https://www.havo.co.id/">Havo Smart Technology</a> : Smart Aquarium System is an aquarium monitoring system using a live streaming camera, and can control systems such as automatic feeding, lighting, pumps, and water purifiers with a website-based Internet of Things.</p>
