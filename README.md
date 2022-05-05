@@ -1,5 +1,5 @@
 # Project Smart Aquarium System based on Internet of Things
-<strong><img src="https://i.ibb.co/n7HKTsK/Smart-Aquarium.png" width="100"> <h3>Smart Aquarium System</h3></strong>
+<h1><img src="https://i.ibb.co/n7HKTsK/Smart-Aquarium.png" width="150" ><strong>Smart Aquarium System</strong></h1>
 
 Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Arduino
 
