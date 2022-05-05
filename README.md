@@ -5,6 +5,12 @@ Stack : HTML, CSS, Javascript, C++, Bootstrap 5, Websocket, ESP8266/32, JSON, Ar
 
 <p>Description Project Internship <a href="https://www.havo.co.id/">Havo Smart Technology</a> : Smart Aquarium System is an aquarium monitoring system using a live streaming camera, and can control systems such as automatic feeding, lighting, pumps, and water purifiers with a website-based Internet of Things.</p>
 
+### Team Project 
+<ul>
+    <li>IoT and Software Developer : <a href="https://github.com/Muhammad-Ikhwan-Fathulloh">Muhammad Ikhwan Fathulloh</a></li>
+    <li>Design and Hardware Developer : <a href="https://github.com/RIZALMIRAZ">Rizal Mi'raz</a></li>
+</ul>
+
 ### Libraries System
 <strong>Module Dashboard Smart Aquarium</strong>
 <ul>
